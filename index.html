@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" class="jeff0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Jeffsum | A Homage</title>
+    <link rel="stylesheet" href="./styles.pcss" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="app__header">
+        <div class="app__header__content">
+          <figure class="header__jeffs">
+            <img src="./img/jeff1.jpg" alt="Sweater Jeff" />
+            <img src="./img/jeff2.jpg" alt="Cardigan Jeff" />
+            <img src="./img/jeff3.jpg" alt="Polka Jeff" />
+          </figure>
+          <div class="header__words">
+            <p class="credit">
+              <span>You made this?</span>
+              <a href="https://www.twitter.com/seanehalpin">He made this.</a>
+            </p>
+            <div class="description">
+              <h1 class="description__title">Jeffsum.</h1>
+              <p class="description__strapline">
+                A little text placeholder generator of Jeff Goldblum
+                awesomeness.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <main class="app__content">
+        <form class="jeffness">
+          <label class="jeffness__label">
+            Gimme like
+            <input
+              class="jeffness__input"
+              type="number"
+              name="paragraphs"
+              value="5"
+            />
+            <span>paragraphs of that Jeffness.</span>
+          </label>
+          <button class="jeffness__btn">Receive the Jeff.</button>
+        </form>
+      </main>
+    </div>
+
+    <div id="acknowledgements" class="acknowledgements">
+      <div class="acknowledgements__content message">
+        <p>
+          This is just an experiment in using web technologies to make authoring
+          animated interfaces more declarative and performant.
+        </p>
+        <p>
+          For the source of its inspiration, design and the
+          <strong>real</strong> jeffness you, uh, should go
+          <a href="http://jeffsum.com">here</a>
+        </p>
+        <p><a href="#">back up</a></p>
+      </div>
+    </div>
+
+    <div class="warning">
+      <div class="warning__content message">
+        <p>
+          If you're seeing this it's because this demo makes use of features
+          like <strong>Web Animation API</strong>,
+          <strong>CSS Properties and Values API</strong>, and
+          <strong>Typed OM</strong> that are currently behind a flag in your
+          browser.
+        </p>
+        <p>
+          Either use Chrome Canary (currently Chrome 73) or enable experimental
+          features in Chrome Stable, Firefox or Safari.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      if ("registerProperty" in CSS && "CSSUnitValue" in window) {
+        CSS.registerProperty({
+          name: "--gradientLeft",
+          syntax: "<color>",
+          initialValue: "#61BFD9",
+          inherits: true
+        });
+        CSS.registerProperty({
+          name: "--gradientRight",
+          syntax: "<color>",
+          initialValue: "#0551B4",
+          inherits: true
+        });
+      } else {
+        document.querySelector(":root").classList.add("no-support");
+      }
+    </script>
+    <script src="./index.js"></script>
+  </body>
+</html>

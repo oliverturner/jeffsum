@@ -1,0 +1,15 @@
+{
+  "name": "jeffsum",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "cssnano": "4.1.8",
+    "parcel-bundler": "^1.6.1",
+    "postcss-preset-env": "6.5.0"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  }
+}

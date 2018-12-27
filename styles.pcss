@@ -1,0 +1,301 @@
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+:root {
+  --maxWidth: 1140px;
+
+  scroll-behavior: smooth;
+
+  &.jeff0 {
+    --gradientLeft: #61bfd9;
+    --gradientRight: #0551b4;
+  }
+  &.jeff1 {
+    --gradientLeft: #15AF88;
+    --gradientRight: #6C429A;
+  }
+  &.jeff2 {
+    --gradientLeft: #EEA031;
+    --gradientRight: #930560;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+} 
+
+a {
+  color: inherit;
+}
+
+input {
+  font: inherit;
+}
+
+figure,
+button {
+  all: unset;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  position: relative;
+  z-index: 1;
+}
+
+.app__header {
+  transition: --gradientLeft 3s, --gradientRight 3s;
+
+  background-image: linear-gradient(
+    242deg,
+    var(--gradientLeft) 16%,
+    var(--gradientRight) 67%
+  );
+}
+
+.app__header__content {
+  display: grid;
+
+  position: relative;
+  overflow: hidden;
+  max-width: var(--maxWidth);
+  margin: auto;
+
+  @media (--mq-l) {
+    overflow: visible;
+  }
+}
+
+.header__jeffs {
+  position: absolute;
+  max-width: 100%;
+  width: 496px;
+  height: 622px;
+  opacity: 0.3;
+  overflow: hidden;
+  z-index: 1;
+  
+  & > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    opacity: 0;
+
+    &:first-child {
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+
+  @media (--mq-l) {
+    top: 60px;
+    left: -30px;
+    opacity: 1;
+    box-shadow: 0 48px 64px -24px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.header__words {
+  position: relative;
+  padding: 15px;
+  text-align: right;
+  color: #fff;
+  z-index: 1;
+
+  @media(--mq-m) {
+    background: none;
+  }
+}
+
+.credit {
+  margin: 0;
+
+  & span,
+  & a {
+    opacity: 0.75;
+  }
+  
+  & a {
+    font-weight: 500;
+    text-decoration: line-through;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+}
+
+.description {
+  margin: 70px 30px 100px;
+  
+  @media(--mq-m) {
+    margin: 80px 0 100px;
+    padding: 0;
+  }
+  @media(--mq-1) {
+    padding: 0 0 0 25%;
+  }
+}
+
+.description__title {
+  margin: 0;
+  font-size: 70px;
+  font-weight: 600;
+  letter-spacing: -2px;
+
+  @media (--mq-l) {
+    font-size: 212px;
+  }
+}
+
+.description__strapline {
+  margin: 7px 0 0;
+  font-size: 24px;
+  font-weight: 500;
+
+  @media (--mq-l) {
+    margin: 7px 0 0 496px;
+    font-size: 39px;
+    text-align: left;
+    opacity: 0.7;
+  }
+}
+
+/* App body -------------------------------------------------------------------*/
+.app__content {
+  position: relative;
+  max-width: var(--maxWidth);
+  margin: auto;
+}
+
+/* The Jeffness ----------------------*/
+.jeffness {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  transform: translate3D(0, -50%, 0);
+  margin: 0 15px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 23px 50px -13px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  color: initial;
+  z-index: 1;
+  
+  @media (--mq-l) {
+    flex-direction: row;
+    align-items: center;
+    
+    position: absolute;
+    right: 0;
+  }
+}
+
+.jeffness__label,
+.jeffness__btn {
+  flex: 1 0 100%;
+
+  line-height: 36px;
+}
+
+.jeffness__label {
+  padding: 0.5em 1em;
+
+  & > span {
+    display: block;
+  }
+  
+  @media (--mq-m) {
+    & > span {
+      display: inline;
+    }
+  }
+
+  @media (--mq-l) {
+    flex: 0 0 auto;
+    padding: 0 2em;
+  }  
+}
+
+.jeffness__input {
+  transition: --gradientRight 1s;
+
+  width: 2em;
+  border: 1px solid var(--gradientRight);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.jeffness__btn {
+  transition: --gradientRight 1s;
+
+  /* Add 2px to account for border on input */
+  padding: calc(0.5em + 2px);
+  background: var(--gradientRight);
+  color: #fff;
+
+  @media (--mq-l) {
+    flex: 0 0 auto;
+    padding: 1em 2em;
+  }
+}
+
+/* Acknowledgements ------------------*/
+.message {
+  max-width: 460px;
+  text-align: center;
+}
+
+.acknowledgements {
+  display: grid;
+  place-content: center;
+
+  transition: 1s opacity 0.75s;
+  opacity: 0;
+  height: 100vh;
+
+  &:target {
+    opacity: 1;
+  }
+
+  & a[href="#"] {
+    border-bottom: 1px dotted currentColor;
+    text-decoration: none;
+    color: grey;
+  }
+}
+
+/* Warning ---------------------------*/
+.warning {
+  display: none;
+
+  @nest .no-support & {
+    display: grid;
+    place-content: center;
+
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0008;
+  }
+}
+
+.warning__content {
+  padding: 20px;
+  background: #ccc;
+}
