@@ -1,15 +1,23 @@
 {
   "name": "jeffsum",
   "version": "1.0.0",
-  "main": "index.js",
+  "author": {
+    "name": "Oliver Turner",
+    "email": "oliver.turner@codedsignal.co.uk"
+  },
+  "keywords": ["css", "jeffsum"],
   "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:oliverturner/jeffsum.git"
+  },
   "devDependencies": {
     "cssnano": "4.1.8",
     "parcel-bundler": "^1.6.1",
     "postcss-preset-env": "6.5.0"
   },
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "start": "parcel index.html"
   }
 }
