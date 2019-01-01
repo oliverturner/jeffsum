@@ -17,7 +17,7 @@
     "postcss-preset-env": "6.5.0"
   },
   "scripts": {
-    "build": "parcel build index.html",
-    "start": "parcel index.html"
+    "build": "parcel build ./src/index.html",
+    "start": "parcel ./src/index.html"
   }
 }
