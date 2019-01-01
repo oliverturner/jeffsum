@@ -65,19 +65,45 @@
 
     <div class="warning">
       <div class="warning__content message">
+        <img
+          class="warning__content__jeff"
+          src="./img/jeffnone.jpg"
+          alt="Concerned Jeff"
+        />
         <p>
-          If you're seeing this it's because this demo makes use of features
-          like <strong>Web Animation API</strong>,
-          <strong>CSS Properties and Values API</strong>, and
-          <strong>Typed OM</strong> that are currently behind a flag in your
-          browser.
+          If you're seeing this it's because this demo requires support for
+          these APIs
         </p>
+        <ul class="warning__features">
+          <li class="feature">Web Animation API</li>
+          <li class="feature feature--unsupported">
+            CSS Properties and Values API
+          </li>
+          <li class="feature feature--unsupported">Typed OM</li>
+        </ul>
+
         <p>
           Either use Chrome Canary (currently Chrome 73) or enable experimental
           features in Chrome Stable, Firefox or Safari.
         </p>
       </div>
     </div>
+
+    <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-checkpoint-incomplete" viewBox="0 0 24 24">
+        <circle fill="#999" cx="12" cy="12" r="12" />
+        <circle fill="#FFF" cx="12" cy="12" r="8" />
+      </symbol>
+
+      <symbol id="icon-checkpoint-complete" viewBox="0 0 24 24">
+        <circle fill="#000" cx="12" cy="12" r="12" />
+        <circle fill="#FFF" cx="12" cy="12" r="8" />
+        <path
+          fill="#000"
+          d="M8.886 10.494L7 12.258 11 16l6.667-6.236L15.78 8 11 12.472z"
+        />
+      </symbol>
+    </svg>
 
     <script>
       if ("registerProperty" in CSS && "CSSUnitValue" in window) {

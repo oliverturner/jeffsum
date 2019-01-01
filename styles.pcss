@@ -296,6 +296,38 @@ button {
 }
 
 .warning__content {
-  padding: 20px;
-  background: #ccc;
+  position: relative;
+  padding: 100px 20px 20px;
+  box-shadow: 0 23px 50px -13px rgba(0, 0, 0, 0.3);
+  background: #fff;
+}
+
+.warning__content__jeff {
+  --wh: 200px;
+
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate3D(-50%, -50%, 0);
+  width: var(--wh);
+  height: var(--wh);
+  border: 3px solid #fff;
+  border-radius: var(--wh);
+}
+
+.warning__features {
+  list-style: none;
+  text-align: justify;
+}
+
+.feature {
+  &::before {
+    content: "\2611";
+  }
+}
+.feature--unsupported {
+  &::before {
+    content: "\2610";
+  }
 }
