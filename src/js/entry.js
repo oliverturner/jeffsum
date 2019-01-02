@@ -8,7 +8,7 @@ const features = [
   [
     "registerProperty",
     CSS,
-    "CSS Properties and Values API",
+    "CSS Properties & Values API",
     "https://drafts.css-houdini.org/css-properties-values-api/"
   ],
   [
@@ -37,5 +37,5 @@ if (features.every(f => f.enabled)) {
   });
   import("./index.js").then(module => module.showJeff());
 } else {
-  import("./fallback.js").then(module => module.default(features));
+  import("./fallback.js").then(module => module.showFallback(features));
 }

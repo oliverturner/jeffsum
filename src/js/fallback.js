@@ -27,7 +27,7 @@ const icons = `
   </symbol>
 `;
 
-export default features => {
+export const showFallback = features => {
   const template = document.querySelector("#template-fallback");
   const node = document.importNode(template.content, true);
   const slot = node.querySelector("[data-slot=features]");
