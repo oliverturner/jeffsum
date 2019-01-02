@@ -69,7 +69,7 @@
         <span class="feature__icon">
           <svg><use xlink:href="#icon-supported"></use></svg>
         </span>
-        <span class="feature__label"></span>
+        <a class="feature__label"></a>
       </li>
     </template>
 
@@ -78,7 +78,7 @@
         <span class="feature__icon feature__icon--unsupported">
           <svg><use xlink:href="#icon-unsupported"></use></svg>
         </span>
-        <span class="feature__label"></span>
+        <a class="feature__label"></a>
       </li>
     </template>
 
@@ -92,13 +92,14 @@
             alt="Concerned Jeff"
           />
           <p>
-            If Jeff looks concerned it's because this demo requires support for
-            these features:
+            If Jeff looks concerned it's because your browser doesn't yet
+            support the features in red below:
           </p>
           <ul class="warning__features"></ul>
           <p>
-            Either use Chrome Canary (currently Chrome 73) or enable
-            experimental features in Chrome Stable, Firefox or Safari.
+            Please use
+            <a href="https://www.google.com/chrome/canary/">Chrome Canary</a>
+            (currently version 73) until life finds a way.
           </p>
         </div>
       </div>
@@ -117,51 +118,7 @@
       </svg>
     </template>
 
-    <script>
-      const features = [
-        ["animate", document.querySelector(":root"), "Web Animation API"],
-        ["registerProperty", CSS, "CSS Properties and Values API"],
-        ["CSSUnitValue", window, "Typed OM"]
-      ].reduce((acc, [prop, obj, label]) => {
-        const feature = { label, enabled: prop in obj };
-        return [...acc, feature];
-      }, []);
-
-      if (features.every(f => f.enabled)) {
-        CSS.registerProperty({
-          name: "--gradientLeft",
-          syntax: "<color>",
-          initialValue: "#61BFD9",
-          inherits: true
-        });
-        CSS.registerProperty({
-          name: "--gradientRight",
-          syntax: "<color>",
-          initialValue: "#0551B4",
-          inherits: true
-        });
-      } else {
-        const t = document.querySelector("#template-warning");
-        const clone = document.importNode(t.content, true);
-        const list = clone.querySelector(".warning__features");
-
-        features.forEach(f => {
-          const s = f.enabled
-            ? "#template-feature"
-            : "#template-feature-unsupported";
-
-          const template = document.querySelector(s);
-          const item = document.importNode(template.content, true);
-          const label = item.querySelector(".feature__label");
-
-          label.textContent = f.label;
-          list.appendChild(item);
-        });
-
-        document.querySelector(":root").classList.add("no-support");
-        document.querySelector("body").appendChild(clone);
-      }
-    </script>
-    <script src="./js/index.js"></script>
+    <!-- Application -->
+    <script src="./js/entry.js"></script>
   </body>
 </html>

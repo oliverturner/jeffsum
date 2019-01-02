@@ -1,3 +1,14 @@
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translate3D(0, 5%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3D(0, 0, 0);
+  }
+}
+
 .warning {
   display: none;
 
@@ -18,12 +29,19 @@
 .warning__content {
   --wh: 150px;
   --pt: calc(var(--wh) / 2);
+  
+  animation: fade-in 1s forwards;
 
   position: relative;
   max-width: 440px;
   padding: var(--pt) 40px 20px;
-  box-shadow: 0 23px 50px -13px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 23px 50px -13px rgba(0, 0, 0, 0.6);
   background: #fff;
+
+  & a {
+    border-bottom: 1px dotted currentColor;
+    text-decoration: none;
+  }
 }
 
 .warning__content__jeff {

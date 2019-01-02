@@ -21,7 +21,14 @@ const switchJeff = (jeff, nextIndex) => () => {
   showJeff(nextIndex);
 };
 
-const showJeff = (nextIndex = 0) => {
+const acknowledge = e => {
+  e.preventDefault();
+  window.location.hash = "acknowledgements";
+};
+
+root.addEventListener("submit", acknowledge);
+
+export const showJeff = (nextIndex = 0) => {
   const jeff = jeffs[nextIndex];
   jeff.style.zIndex = 2;
 
@@ -35,12 +42,3 @@ const showJeff = (nextIndex = 0) => {
     setTimeout(switchJeff(jeff, ++nextIndex % 3), config.duration);
   };
 };
-
-const acknowledge = e => {
-  e.preventDefault();
-  window.location.hash = "acknowledgements";
-};
-
-root.addEventListener("submit", acknowledge);
-
-showJeff();
