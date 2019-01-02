@@ -63,39 +63,16 @@
       </div>
     </div>
 
-    <!-- Templates -->
-    <template id="template-feature">
-      <li class="feature">
-        <span class="feature__icon">
-          <svg><use xlink:href="#icon-supported"></use></svg>
-        </span>
-        <a class="feature__label"></a>
-      </li>
-    </template>
-
-    <template id="template-feature-unsupported">
-      <li class="feature">
-        <span class="feature__icon feature__icon--unsupported">
-          <svg><use xlink:href="#icon-unsupported"></use></svg>
-        </span>
-        <a class="feature__label"></a>
-      </li>
-    </template>
-
-    <template id="template-warning">
+    <template id="template-fallback">
       <link rel="stylesheet" href="./styles/fallback.pcss" />
-      <div class="warning">
-        <div class="warning__content message">
-          <img
-            class="warning__content__jeff"
-            src="./img/jeffnone.jpg"
-            alt="Concerned Jeff"
-          />
+      <div class="fallback">
+        <div class="fallback__content message">
+          <img class="fallback__jeff" src="./img/none.jpg" alt="Concerned Jeff" />
           <p>
             If Jeff looks concerned it's because your browser doesn't yet
             support the features in red below:
           </p>
-          <ul class="warning__features"></ul>
+          <ul class="fallback__features" data-slot="features"></ul>
           <p>
             Please use
             <a href="https://www.google.com/chrome/canary/">Chrome Canary</a>
@@ -103,22 +80,9 @@
           </p>
         </div>
       </div>
-
-      <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
-        <symbol id="icon-supported" viewBox="0 0 1024 1024">
-          <path
-            d="M760 380.4l-61.6-61.6-263.2 263.1-109.6-109.5L264 534l171.2 171.2L760 380.4z"
-          />
-        </symbol>
-        <symbol id="icon-unsupported" viewBox="0 0 1024 1024">
-          <path
-            d="M697.4 759.2l61.8-61.8L573.8 512l185.4-185.4-61.8-61.8L512 450.2 326.6 264.8l-61.8 61.8L450.2 512 264.8 697.4l61.8 61.8L512 573.8z"
-          />
-        </symbol>
-      </svg>
     </template>
 
     <!-- Application -->
-    <script src="./js/entry.js"></script>
+    <script src="./js/entry.js" async></script>
   </body>
 </html>

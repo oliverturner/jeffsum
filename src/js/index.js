@@ -14,7 +14,7 @@ const updateLayers = jeff => {
   jeff.style.zIndex = 1;
 };
 
-const switchJeff = (jeff, nextIndex) => () => {
+const switchJeff = (jeff, nextIndex) => {
   root.classList.remove(...jeffClasses);
   root.classList.add("jeff" + nextIndex);
   updateLayers(jeff);
@@ -39,6 +39,6 @@ export const showJeff = (nextIndex = 0) => {
     ],
     config
   ).onfinish = () => {
-    setTimeout(switchJeff(jeff, ++nextIndex % 3), config.duration);
+    setTimeout(switchJeff, config.duration, jeff, ++nextIndex % 3);
   };
 };

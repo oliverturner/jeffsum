@@ -9,24 +9,20 @@
   }
 }
 
-.warning {
-  display: none;
+.fallback {
+  display: grid;
+  place-content: center;
 
-  @nest .no-support & {
-    display: grid;
-    place-content: center;
-
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #0008;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0008;
+  z-index: 1;
 }
 
-.warning__content {
+.fallback__content {
   --wh: 150px;
   --pt: calc(var(--wh) / 2);
   
@@ -44,7 +40,7 @@
   }
 }
 
-.warning__content__jeff {
+.fallback__jeff {
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -56,7 +52,7 @@
   border-radius: var(--wh);
 }
 
-.warning__features {
+.fallback__features {
   display: inline-flex;
   flex-direction: column;
 
