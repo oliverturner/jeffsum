@@ -32,3 +32,18 @@ The combination of
 
 finally lets us achieve what many of us have long awaited: _declaratively
 animating gradients either by class name or dynamically_.
+
+---
+
+## Credits
+
+Many thanks to
+
+- [Sean Halpin](https://twitter.com/seanehalpin) - whose
+  [original design](http://jeffsum.com/) this is
+- [Sara Vieira](https://twitter.com/NikkitaFTW) - whose
+  [tweet](https://twitter.com/NikkitaFTW/status/1062359804663001088) was an
+  inspiration to get this to work
+- [Vincent De Oliveira](https://twitter.com/iamvdo) - who has championed Houdini
+  for years and whose [demos](http://iamvdo.me/en) were immensely helpful
+  (especially [this one](https://css-houdini.rocks/animating-gradient/)!
