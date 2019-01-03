@@ -46,4 +46,3 @@ Many thanks to
   inspiration to get this to work
 - [Vincent De Oliveira](https://twitter.com/iamvdo) - who has championed Houdini
   for years and whose [demos](http://iamvdo.me/en) were immensely helpful
-  (especially [this one](https://css-houdini.rocks/animating-gradient/)!
