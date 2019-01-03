@@ -23,19 +23,7 @@ const features = [
 }, []);
 
 if (features.every(f => f.enabled)) {
-  CSS.registerProperty({
-    name: "--gradientLeft",
-    syntax: "<color>",
-    initialValue: "#61BFD9",
-    inherits: true
-  });
-  CSS.registerProperty({
-    name: "--gradientRight",
-    syntax: "<color>",
-    initialValue: "#0551B4",
-    inherits: true
-  });
-  import("./index.js").then(module => module.showJeff());
+  import("./jeffsum.js").then(module => module.showJeff());
 } else {
   import("./fallback.js").then(module => module.showFallback(features));
 }

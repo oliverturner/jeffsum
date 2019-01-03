@@ -30,14 +30,10 @@
 
   position: relative;
   max-width: 440px;
+  margin: 0 20px;
   padding: var(--pt) 40px 20px;
   box-shadow: 0 23px 50px -13px rgba(0, 0, 0, 0.6);
   background: #fff;
-
-  & a {
-    border-bottom: 1px dotted currentColor;
-    text-decoration: none;
-  }
 }
 
 .fallback__jeff {
@@ -90,4 +86,9 @@
   & .feature__icon--unsupported {
     background: red;
   }
+}
+
+.feature__link {
+  text-decoration: none;
+  border-bottom: 1px dotted;
 }
