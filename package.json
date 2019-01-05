@@ -1,20 +1,27 @@
 {
   "name": "jeffsum",
   "version": "1.0.0",
-  "license": "MIT",
   "author": {
     "name": "Oliver Turner",
     "email": "oliver.turner@codedsignal.co.uk"
   },
-  "keywords": ["css", "gradient", "jeffsum"],
-  "main": "src/index.html",
-  "repository": {
-    "url": "git@github.com:oliverturner/jeffsum.git"
-  },
+  "description": "Declaratively animate gradients in pure CSS through the power of the Jeff",
+  "homepage": "https://jeffsum.oliverturner.cloud/",
+  "bugs": "https://github.com/oliverturner/jeffsum/issues",
   "devDependencies": {
     "cssnano": "4.1.8",
     "parcel-bundler": "^1.6.1",
     "postcss-preset-env": "6.5.0"
+  },
+  "keywords": [
+    "css",
+    "gradient",
+    "jeffsum"
+  ],
+  "license": "MIT",
+  "main": "src/index.html",
+  "repository": {
+    "url": "git@github.com:oliverturner/jeffsum.git"
   },
   "scripts": {
     "build": "parcel build ./src/index.html",
