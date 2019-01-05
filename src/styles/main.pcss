@@ -3,8 +3,11 @@
 }
 
 :root {
-  --maxWidth: 1140px;
+   --maxWidth: 1140px;
   --icon-wh: 16px;
+  
+  --gradientStart: #61BFD9;
+  --gradientEnd: #0551B4;
 
   will-change: scroll-position;
 
@@ -48,8 +51,8 @@ button {
 
   background-image: linear-gradient(
     242deg,
-    var(--gradientStart, #61BFD9) 16%,
-    var(--gradientEnd, #0551B4) 67%
+    var(--gradientStart) 16%,
+    var(--gradientEnd) 67%
   );
 }
 
@@ -232,7 +235,7 @@ button {
   transition: --gradientEnd 3s;
 
   width: 2em;
-  border: 1px solid var(--gradientEnd, #0551B4);
+  border: 1px solid var(--gradientEnd);
   border-radius: 3px;
   text-align: center;
 }
@@ -242,7 +245,7 @@ button {
 
   /* Add 2px to account for border on input */
   padding: calc(0.5em + 2px);
-  background: var(--gradientEnd, #0551B4);
+  background: var(--gradientEnd);
   color: #fff;
 
   @media (--mq-l) {
