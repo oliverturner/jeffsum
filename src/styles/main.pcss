@@ -44,7 +44,6 @@ button {
 
 /* App header ----------------------------------------------------------------*/
 .app__header {
-  will-change: background-image;
   transition: --gradientStart 3s, --gradientEnd 3s;
 
   background-image: linear-gradient(
@@ -77,6 +76,8 @@ button {
   z-index: 1;
   
   & > img {
+    will-change: opacity, transform;
+
     position: absolute;
     top: 0;
     left: 0;

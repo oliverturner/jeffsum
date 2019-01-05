@@ -1,13 +1,13 @@
 {
   "name": "jeffsum",
   "version": "1.0.0",
+  "license": "MIT",
   "author": {
     "name": "Oliver Turner",
     "email": "oliver.turner@codedsignal.co.uk"
   },
   "keywords": ["css", "gradient", "jeffsum"],
-  "license": "MIT",
-  "main": "index.js",
+  "main": "src/index.html",
   "repository": {
     "url": "git@github.com:oliverturner/jeffsum.git"
   },
