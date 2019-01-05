@@ -229,7 +229,7 @@ button {
 }
 
 .jeffness__input {
-  transition: --gradientEnd 1s;
+  transition: --gradientEnd 3s;
 
   width: 2em;
   border: 1px solid var(--gradientEnd, #0551B4);
@@ -238,7 +238,7 @@ button {
 }
 
 .jeffness__btn {
-  transition: --gradientEnd 1s;
+  transition: --gradientEnd 3s;
 
   /* Add 2px to account for border on input */
   padding: calc(0.5em + 2px);
@@ -278,4 +278,70 @@ button {
 
 .acknowledgements__content {
   margin: 0 40px;
+}
+
+/* Github Corner -------------------------------------------------------------*/
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+.github-corner {
+  --wh: 80px;
+
+  position: absolute;
+  top: 0;
+  
+
+  display: block;
+  width: var(--wh);
+  height: var(--wh);
+  z-index: 2;
+
+  transform: scaleX(-1);
+  left: 0;
+
+  @media (--mq-xl) {
+    transform: scaleX(1);
+    left: initial;
+    right: 0;
+  }
+
+  &:hover {
+    & .octo-arm {
+      @media (min-width: 500px) {
+        animation: octocat-wave 560ms ease-in-out 3;
+      }
+    }
+  }
+
+  & > svg {
+    transition: fill 3s;
+
+    fill: var(--gradientStart);
+    color:#fff;
+
+    @media (--mq-xl) {
+      fill: var(--gradientEnd);
+    }
+  }
+
+  & .octo-arm,
+  & .octo-body {
+    fill: currentColor;
+  }
+
+  & .octo-arm {
+    transform-origin: 130px 106px;
+  }
 }
