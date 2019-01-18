@@ -102,6 +102,7 @@
     </a>
 
     <template id="template-fallback">
+      <link rel="stylesheet" href="./styles/toaster.pcss" />
       <link rel="stylesheet" href="./styles/fallback.pcss" />
       <div class="fallback">
         <div class="fallback__content message">
@@ -115,13 +116,22 @@
             support the features in red below:
           </p>
           <ul class="fallback__features" data-slot="features"></ul>
-          <p>
-            Please use
-            <a href="https://www.google.com/chrome/canary/">Chrome Canary</a>
-            (currently version 73) until life finds a way.
-          </p>
+          <div class="fallback__instructions">
+            <p>Until life finds a way...</p>
+            <ol>
+              <li>
+                Click <button class="btn--text" data-click="copy">this button</button> to copy
+                the chrome://flags link
+              </li>
+              <li>
+                Open a new tab, paste the copied URL into the address bar and
+                select "enabled"
+              </li>
+            </ol>
+          </div>
         </div>
       </div>
+      <div class="toaster"></div>
     </template>
 
     <!-- Application -->

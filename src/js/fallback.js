@@ -27,6 +27,29 @@ const icons = `
   </symbol>
 `;
 
+const makeToaster = el => (msg, type = "info") => {
+  const opts = { once: true };
+  const toast = document.createElement("p");
+  toast.classList.add("toast", `toast--${type}`);
+  toast.textContent = msg;
+
+  const onToastIn = () => {
+    toast.addEventListener("animationend", toast.remove, opts);
+    setTimeout(() => toast.classList.add("is-toasted"), 5000);
+  };
+
+  toast.addEventListener("animationend", onToastIn, opts);
+  el.appendChild(toast);
+};
+
+const onCopyClick = toaster => {
+  const url = "chrome://flags/#enable-experimental-web-platform-features";
+  navigator.clipboard
+    .writeText(url)
+    .then(() => toaster(`📋 copied ${url} to clipboard!`, "success"))
+    .catch(err => toaster(`😱 Oh no! ${err}`, "error"));
+};
+
 export const showFallback = features => {
   const template = document.querySelector("#template-fallback");
   const node = document.importNode(template.content, true);
@@ -35,6 +58,11 @@ export const showFallback = features => {
 
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.innerHTML = icons;
+
+  const toaster = makeToaster(node.querySelector(".toaster"));
+
+  const copyBtn = node.querySelector("[data-click=copy]");
+  copyBtn.addEventListener("click", () => onCopyClick(toaster));
 
   const body = document.querySelector("body");
   body.appendChild(node);
