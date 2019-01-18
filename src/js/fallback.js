@@ -27,6 +27,13 @@ const icons = `
   </symbol>
 `;
 
+const onCopyClick = () => {
+  navigator.clipboard
+    .writeText("chrome://flags/#enable-experimental-web-platform-features")
+    .then(args => console.log("copied", args))
+    .catch(err => console.log(err));
+};
+
 export const showFallback = features => {
   const template = document.querySelector("#template-fallback");
   const node = document.importNode(template.content, true);
@@ -35,6 +42,9 @@ export const showFallback = features => {
 
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.innerHTML = icons;
+
+  const copyBtn = node.querySelector("[data-click=copy]");
+  copyBtn.addEventListener("click", onCopyClick);
 
   const body = document.querySelector("body");
   body.appendChild(node);

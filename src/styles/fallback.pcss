@@ -11,6 +11,14 @@
   }
 }
 
+.btn--text {
+  display: inline-block;
+  padding: 2px 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #ccc;
+}
+
 .fallback {
   display: grid;
   place-content: center;
@@ -33,7 +41,7 @@
   position: relative;
   max-width: 440px;
   margin: 0 20px;
-  padding: var(--pt) 40px 20px;
+  padding: var(--pt) 20px 20px;
   box-shadow: 0 23px 50px -13px rgba(0, 0, 0, 0.6);
   background: #fff;
 }
@@ -58,6 +66,19 @@
   padding: 0;
   list-style: none;
   text-align: justify;
+}
+
+.fallback__instructions {
+  margin-top: 20px;
+  border-top: 1px dotted #333;
+
+  & > ol {
+    text-align: left; 
+  }
+
+  & li {
+    margin-top: 10px;
+  }
 }
 
 .feature {
