@@ -27,11 +27,27 @@ const icons = `
   </symbol>
 `;
 
-const onCopyClick = () => {
+const makeToaster = el => (msg, type = "info") => {
+  const opts = { once: true };
+  const toast = document.createElement("p");
+  toast.classList.add("toast", `toast--${type}`);
+  toast.textContent = msg;
+
+  const onToastIn = () => {
+    toast.addEventListener("animationend", toast.remove, opts);
+    setTimeout(() => toast.classList.add("is-toasted"), 5000);
+  };
+
+  toast.addEventListener("animationend", onToastIn, opts);
+  el.appendChild(toast);
+};
+
+const onCopyClick = toaster => {
+  const url = "chrome://flags/#enable-experimental-web-platform-features";
   navigator.clipboard
-    .writeText("chrome://flags/#enable-experimental-web-platform-features")
-    .then(args => console.log("copied", args))
-    .catch(err => console.log(err));
+    .writeText(url)
+    .then(() => toaster(`📋 copied ${url} to clipboard!`, "success"))
+    .catch(err => toaster(`😱 Oh no! ${err}`, "error"));
 };
 
 export const showFallback = features => {
@@ -43,8 +59,10 @@ export const showFallback = features => {
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.innerHTML = icons;
 
+  const toaster = makeToaster(node.querySelector(".toaster"));
+
   const copyBtn = node.querySelector("[data-click=copy]");
-  copyBtn.addEventListener("click", onCopyClick);
+  copyBtn.addEventListener("click", () => onCopyClick(toaster));
 
   const body = document.querySelector("body");
   body.appendChild(node);
