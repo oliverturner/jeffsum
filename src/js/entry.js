@@ -7,12 +7,12 @@ const features = [
   {
     enabled: "registerProperty" in CSS,
     label: "CSS Properties & Values API",
-    url: "https://drafts.css-houdini.org/css-properties-values-api/"
+    url: "https://houdini.glitch.me/custom-properties"
   },
   {
     enabled: "CSSUnitValue" in window,
     label: "Typed OM",
-    url: "https://github.com/w3c/css-houdini-drafts/tree/master/css-typed-om"
+    url: "https://houdini.glitch.me/typed-om"
   }
 ];
 
