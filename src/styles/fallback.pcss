@@ -12,11 +12,18 @@
 }
 
 .btn--text {
+  transition: background 0.25s;
+
   display: inline-block;
   padding: 2px 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: #ccc;
+  border-radius: 3px;
+  background: var(--gradientEnd);
+  color: #fffd;
+
+  &:hover {
+    background: var(--gradientStart);
+    color: #000;
+  }
 }
 
 .fallback {
@@ -41,7 +48,7 @@
   position: relative;
   max-width: 440px;
   margin: 0 20px;
-  padding: var(--pt) 20px 20px;
+  padding: var(--pt) 0 0;
   box-shadow: 0 23px 50px -13px rgba(0, 0, 0, 0.6);
   background: #fff;
 }
@@ -68,13 +75,21 @@
   text-align: justify;
 }
 
-.fallback__instructions {
-  margin-top: 20px;
-  border-top: 1px dotted #333;
+.fallback__text {
+  padding: 20px;
+
+  & p {
+    margin-top: 0;
+  }
+}
+
+.fallback__text--instructions {
+  background: #c4d5e5;
+  padding-bottom: 30px;
 
   & > ol {
     margin: 10px 0 0;
-    padding: 0 0 0 20px;
+    padding: 0 0 0 30px;
     text-align: left; 
   }
 

@@ -17,7 +17,11 @@ const features = [
 ];
 
 if (features.every(f => f.enabled)) {
-  import("./jeffsum/index.js").then(module => module.showJeff());
+  import("./jeffsum/index.js")
+    .then(module => module.showJeff())
+    .catch(err => console.log(err));
 } else {
-  import("./fallback/index.js").then(module => module.showFallback(features));
+  import("./fallback/index.js")
+    .then(module => module.showFallback(features))
+    .catch(err => console.log(err));
 }

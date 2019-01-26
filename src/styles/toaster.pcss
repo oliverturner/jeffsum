@@ -10,12 +10,14 @@
 }
 
 @keyframes toastOut {
-  from {
+  0% {
     opacity: 1;
     transform: translateY(0);
   }
-  to {
+  50% {
     opacity: 0;
+  }
+  100% {
     transform: translateY(-100%);
   }
 }
@@ -39,16 +41,24 @@
   transform: translate(100%);
   animation: toastIn 1s forwards;
 
+  display: flex;
+  align-items: center;
+
   margin: 5px 10px;
-  padding: 10px 20px 10px 40px;
+  padding-right: 10px;
   text-align: left;
   box-shadow: 0 5px 5px #0009;
 
   &::before {
     content: attr(data-icon);
-    position: absolute;
-    left: 16px;
-    top: 6px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 10px;
+    padding: 10px;
+    background: #0003;
   }  
 
   &.is-toasted {
