@@ -3,7 +3,7 @@ export const makeToaster = el => (icon, msg, type = "info") => {
   const toast = document.createElement("p");
   toast.dataset.icon = icon;
   toast.classList.add("toast", `toast--${type}`);
-  toast.innerHTML = msg;
+  toast.innerHTML = `<p>${msg}<p>`;
 
   const onToastIn = () => {
     toast.addEventListener("animationend", toast.remove, opts);

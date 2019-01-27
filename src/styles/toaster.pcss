@@ -42,10 +42,9 @@
   animation: toastIn 1s forwards;
 
   display: flex;
-  align-items: center;
+  // align-items: center;
 
   margin: 5px 10px;
-  padding-right: 10px;
   text-align: left;
   box-shadow: 0 5px 5px #0009;
 
@@ -57,9 +56,14 @@
     align-items: center;
 
     margin-right: 10px;
-    padding: 10px;
+    padding: 0 10px;
     background: #0003;
-  }  
+  }
+
+  & p {
+    margin: 0;
+    padding: 10px;
+  }
 
   &.is-toasted {
     animation: toastOut 1s forwards;
