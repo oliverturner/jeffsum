@@ -14,6 +14,7 @@ CSS.registerProperty({
 const root = document.querySelector(":root");
 const hero = document.querySelector(".app__header");
 const jeffs = [...hero.querySelectorAll("img")];
+const jeffNum = jeffs.length;
 
 const config = {
   duration: 3000,
@@ -43,7 +44,7 @@ export const showJeff = (currentIndex = 0) => {
     config
   ).onfinish = () => {
     const nextIndex = currentIndex + 1;
-    setTimeout(switchJeff, config.duration, jeff, nextIndex % 3);
+    setTimeout(switchJeff, config.duration, jeff, nextIndex % jeffNum);
   };
 };
 
