@@ -28,7 +28,7 @@ const onCopyClick = toaster => {
   navigator.clipboard
     .writeText(url)
     .then(() =>
-      toaster("📋", `The link was copied to your clipboard!`, "success")
+      toaster("📋", `The link was copied to your clipboard! Now open a new tab...`, "success")
     )
     .catch(err => toaster("😱", `Oh no! ${err}`, "error"));
 };
