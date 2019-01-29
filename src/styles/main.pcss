@@ -42,12 +42,29 @@ button {
   cursor: pointer;
 }
 
+/* Utility classes -----------------------------------------------------------*/
+.btn--text {
+  transition: background 0.25s;
+
+  display: inline-block;
+  padding: 2px 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  background: var(--gradientEnd);
+  color: #fffd;
+
+  &:hover {
+    background: var(--gradientStart);
+    color: #000;
+  }
+}
+
+/* App -----------------------------------------------------------------------*/
 .app {
   position: relative;
   z-index: 1;
 }
 
-/* App header ----------------------------------------------------------------*/
 .app__header {
   transition: --gradientStart 3s, --gradientEnd 3s;
 
@@ -90,6 +107,7 @@ button {
     display: block;
     width: 100%;
     opacity: 0;
+    background: var(--gradientEnd);
 
     &:first-child {
       opacity: 1;
@@ -275,9 +293,7 @@ button {
   }
 
   & a[href="#"] {
-    border-bottom: 1px dotted currentColor;
-    text-decoration: none;
-    color: grey;
+    
   }
 }
 
