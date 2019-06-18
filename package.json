@@ -24,14 +24,19 @@
     "url": "git@github.com:oliverturner/jeffsum.git"
   },
   "main": "src/index.html",
+  "browserslist": [
+    "> 1%, not IE 11"
+  ],
   "devDependencies": {
-    "cssnano": "4.1.10",
     "cypress": "3.3.1",
-    "parcel-bundler": "^1.12.3",
-    "postcss-preset-env": "6.6.0"
+    "postcss-preset-env": "6.6.0",
+    "servor": "2.2.1"
   },
   "scripts": {
-    "build": "parcel build ./src/index.html",
-    "start": "parcel ./src/index.html"
+    "postcss": "postcss src/styles/*.pcss --dir src/css --ext css -w",
+    "dev": "yarn postcss & servor src"
+  },
+  "dependencies": {
+    "postcss-cli": "6.1.2"
   }
 }
