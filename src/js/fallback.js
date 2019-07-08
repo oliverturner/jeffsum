@@ -1,5 +1,17 @@
-import { icons } from "./icons";
-import { makeToaster } from "../utils/toaster";
+import { makeToaster } from "./utils/toaster.js";
+
+const icons = `
+<symbol id="icon-supported" viewBox="0 0 1024 1024">
+  <path
+    d="M760 380.4l-61.6-61.6-263.2 263.1-109.6-109.5L264 534l171.2 171.2L760 380.4z"
+  />
+</symbol>
+<symbol id="icon-unsupported" viewBox="0 0 1024 1024">
+  <path
+    d="M697.4 759.2l61.8-61.8L573.8 512l185.4-185.4-61.8-61.8L512 450.2 326.6 264.8l-61.8 61.8L450.2 512 264.8 697.4l61.8 61.8L512 573.8z"
+  />
+</symbol>
+`;
 
 const getFeature = ({ url, label, enabled }) => {
   const icon = enabled ? "#icon-supported" : "#icon-unsupported";
@@ -17,7 +29,7 @@ const getFeature = ({ url, label, enabled }) => {
   `;
 };
 
-const onCopyClick = toaster => {
+const onCopyClick = async toaster => {
   const url = "chrome://flags/#enable-experimental-web-platform-features";
 
   if (!navigator.clipboard) {
@@ -25,12 +37,16 @@ const onCopyClick = toaster => {
     return toaster("😔", `${err}`, "error");
   }
 
-  navigator.clipboard
-    .writeText(url)
-    .then(() =>
-      toaster("📋", `The link was copied to your clipboard! Now open a new tab...`, "success")
-    )
-    .catch(err => toaster("😱", `Oh no! ${err}`, "error"));
+  try {
+    await navigator.clipboard.writeText(url);
+    toaster(
+      "📋",
+      `Link copied to clipboard! Now on to step 2...`,
+      "success"
+    );
+  } catch (err) {
+    toaster("😱", `Oh no! ${err}`, "error");
+  }
 };
 
 export const showFallback = features => {

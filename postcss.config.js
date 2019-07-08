@@ -8,7 +8,7 @@ const config = {
 };
 
 /**
- * Turns config.mq above into a customMedia rules:
+ * Turns config.mq above into customMedia rules:
  * {
  *   "--mq-s": "496px", 
  *   "--mq-m": "768px, 
