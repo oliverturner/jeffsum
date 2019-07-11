@@ -44,7 +44,7 @@ button {
 
 /* Utility classes -----------------------------------------------------------*/
 .btn--text {
-  transition: background 0.25s;
+  transition: --gradientEnd 1s, background 0.25s;
 
   display: inline-block;
   padding: 2px 5px;
@@ -168,7 +168,7 @@ button {
   letter-spacing: -2px;
 
   @media (--mq-l) {
-    font-size: 212px;
+    font-size: 180px;
   }
 }
 
@@ -280,25 +280,57 @@ button {
   text-align: center;
 }
 
-.acknowledgements {
+.main {
+  position: relative;
+  max-width: 960px;
+  height: 100vh;
+  margin: 150px auto 0;
+  z-index: 0;
+}
+
+.main__gallery,
+.main__acknowledgements{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.main__gallery {
+  display: layout(masonry);
+    --padding: 20;
+    --columns: 3;
+  
+  overflow: auto;
+}
+
+.main__acknowledgements {
+  position: absolute;
+
   display: grid;
   place-content: center;
 
-  transition: 1s opacity 0.75s;
+  transition: 2s opacity 2.75s;
   opacity: 0;
-  height: 100vh;
+  pointer-events: none;
 
-  &:target {
+  @nest :target & {
     opacity: 1;
   }
 
   & a[href="#"] {
-    
+    padding: 0.5rem;
+    color: white;
   }
 }
 
 .acknowledgements__content {
   margin: 0 40px;
+  padding: 1rem;
+  pointer-events: auto;
+  box-shadow: 0 5px 10px #0006;
+  background: #fff;
 }
 
 /* Github Corner -------------------------------------------------------------*/
