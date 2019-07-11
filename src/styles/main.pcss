@@ -1,3 +1,7 @@
+@keyframes fade-in {
+  to {opacity: 1}
+}
+
 *, *::before, *::after {
   box-sizing: inherit;
 }
@@ -303,6 +307,14 @@ button {
     --columns: 3;
   
   overflow: auto;
+
+  & img {
+    animation: 1s fade-in forwards;
+    animation-delay: 2s;
+    
+    object-fit: cover;
+    opacity: 0;
+  }
 }
 
 .main__acknowledgements {

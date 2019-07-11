@@ -19,6 +19,7 @@ const hero = document.querySelector(".app__header");
 const gallery = document.querySelector(".main__gallery");
 const jeffs = [...hero.querySelectorAll("img")];
 const jeffNum = jeffs.length;
+const cdn = "https://image.tmdb.org/t/p";
 
 const config = {
   duration: 3000,
@@ -52,21 +53,30 @@ export const showJeff = (currentIndex = 0) => {
   };
 };
 
-const html = `
-  <img src="https://source.unsplash.com/user/erondu/300x200" alt="random">
-  <img src="https://source.unsplash.com/user/jabari21/350x250" alt="random">
-  <img src="https://source.unsplash.com/user/angelsvicente/400x300" alt="random">
-  <img src="https://source.unsplash.com/user/trevcole/400x400" alt="random">
-  <img src="https://source.unsplash.com/user/krivitskiy/450x350" alt="random">
-  <img src="https://source.unsplash.com/user/zulmaury/300x300" alt="random">
-  <img src="https://source.unsplash.com/user/eyeforebony/350x200" alt="random">
-  <img src="https://source.unsplash.com/user/cristian_newman/400x300" alt="random">
-  <img src="https://source.unsplash.com/user/vale_zmeykov/300x400" alt="random">
-  <img src="https://source.unsplash.com/user/helloimnik/450x200" alt="random">
-`;
-
-root.addEventListener("submit", e => {
+root.addEventListener("submit", async e => {
   e.preventDefault();
-  gallery.innerHTML = html;
-  window.location.hash = "main";
+  const f = new FormData(e.target);
+  const n = f.get("paragraphs");
+
+  try {
+    const req = await fetch("/img/images.json");
+    const json = await req.json();
+    const max = json.length;
+    const indices = Array.from(
+      { length: n },
+      () => Math.floor(Math.random() * max)
+    );
+
+    gallery.innerHTML = indices
+      .map(n => {
+        const [alt, url] = json[n];
+        const h = Math.floor(Math.random() * 400) + 100;
+        return `<img height="${h}" src="${cdn}/w300/${url}" alt="${alt}">`;
+      })
+      .join("");
+
+    window.location.hash = "main";
+  } catch (err) {
+    console.error(err);
+  }
 });
