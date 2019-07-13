@@ -2,7 +2,7 @@
 
 ## Intro
 
-This is my story of learning Houdini and how I was introduced to it through by Jeff Goldblum. 
+This is my story of learning Houdini and how I was introduced to it by Jeff Goldblum. 
 
 In it I'll talk about what Houdini is, how its component parts relate to each other and how you can start your own journey.
 
