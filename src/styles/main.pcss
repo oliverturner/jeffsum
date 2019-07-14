@@ -120,7 +120,7 @@ button {
   }
 
   @media (--mq-l) {
-    top: 60px;
+    top: 30px;
     opacity: 1;
     box-shadow: 0 48px 64px -24px rgba(0, 0, 0, 0.3);
   }
@@ -172,7 +172,7 @@ button {
   letter-spacing: -2px;
 
   @media (--mq-l) {
-    font-size: 180px;
+    font-size: 150px;
   }
 }
 
@@ -304,13 +304,12 @@ button {
 .main__gallery {
   display: layout(masonry);
     --padding: 20;
-    --columns: 3;
+    --columns: 5;
   
   overflow: auto;
 
   & img {
     animation: 1s fade-in forwards;
-    animation-delay: 2s;
     
     object-fit: cover;
     opacity: 0;
@@ -331,6 +330,14 @@ button {
     opacity: 1;
   }
 
+  & p {
+    margin: 1rem 0 0;
+
+    &:first-child {
+      margin: 0;
+    }
+  }
+
   & a[href="#"] {
     padding: 0.5rem;
     color: white;
@@ -341,7 +348,7 @@ button {
   margin: 0 40px;
   padding: 1rem;
   pointer-events: auto;
-  box-shadow: 0 5px 10px #0006;
+  box-shadow: 0 5px 10px #0009;
   background: #fff;
 }
 

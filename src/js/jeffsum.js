@@ -53,8 +53,17 @@ export const showJeff = (currentIndex = 0) => {
   };
 };
 
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 root.addEventListener("submit", async e => {
   e.preventDefault();
+
   const f = new FormData(e.target);
   const n = f.get("paragraphs");
 
@@ -62,16 +71,16 @@ root.addEventListener("submit", async e => {
     const req = await fetch("/img/images.json");
     const json = await req.json();
     const max = json.length;
-    const indices = Array.from(
-      { length: n },
-      () => Math.floor(Math.random() * max)
+    const indices = shuffle(Array.from({ length: max }, (_, i) => i)).slice(
+      0,
+      n
     );
 
     gallery.innerHTML = indices
-      .map(n => {
-        const [alt, url] = json[n];
-        const h = Math.floor(Math.random() * 400) + 100;
-        return `<img height="${h}" src="${cdn}/w300/${url}" alt="${alt}">`;
+      .map((idx, i) => {
+        const [alt, url] = json[idx];
+        const widths = ["w200", "w300"];
+        return `<img src="${cdn}/${widths[i % 2]}/${url}" alt="${alt}">`;
       })
       .join("");
 
