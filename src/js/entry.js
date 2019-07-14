@@ -11,9 +11,9 @@ function init() {
       url: "https://houdini.glitch.me/custom-properties"
     },
     {
-      enabled: "CSSUnitValue" in window,
-      label: "Typed OM",
-      url: "https://houdini.glitch.me/typed-om"
+      enabled: "layoutWorklet" in CSS,
+      label: "Layout API",
+      url: "https://houdini.glitch.me/layout"
     }
   ];
 
