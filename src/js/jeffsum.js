@@ -12,7 +12,7 @@ CSS.registerProperty({
   inherits: true
 });
 
-CSS.layoutWorklet.addModule("/js/worklets/masonry.js");
+CSS.layoutWorklet?.addModule("/js/worklets/masonry.js");
 
 const root = document.querySelector(":root");
 const hero = document.querySelector(".app__header");

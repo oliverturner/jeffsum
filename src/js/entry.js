@@ -10,11 +10,11 @@ function init() {
       label: "CSS Properties & Values API",
       url: "https://houdini.glitch.me/custom-properties"
     },
-    {
-      enabled: "layoutWorklet" in CSS,
-      label: "Layout API",
-      url: "https://houdini.glitch.me/layout"
-    }
+    // {
+    //   enabled: "layoutWorklet" in CSS,
+    //   label: "Layout API",
+    //   url: "https://houdini.glitch.me/layout"
+    // }
   ];
 
   if (features.every(f => f.enabled)) {
