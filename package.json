@@ -27,13 +27,12 @@
     "node": "18.13.0"
   },
   "devDependencies": {
-    "cypress": "3.3.1",
     "postcss-preset-env": "6.6.0",
-    "servor": "2.2.1",
     "vite": "^4.0.4"
   },
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "start": "vite"
   }
 }
