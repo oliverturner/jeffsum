@@ -1,3 +1,15 @@
+@property --gradientStart {
+  syntax: "<color>",
+  initialValue: "#61BFD9",
+  inherits: true,
+});
+
+@property --gradientEnd {
+  syntax: "<color>",
+  initialValue: "#0551B4",
+  inherits: true,
+});
+
 @keyframes fade-in {
   to {opacity: 1}
 }
@@ -9,9 +21,6 @@
 :root {
    --maxWidth: 1140px;
   --icon-wh: 16px;
-
-  --gradientStart: #61BFD9;
-  --gradientEnd: #0551B4;
 
   will-change: scroll-position;
 
