@@ -1,7 +1,8 @@
 const root = document.querySelector(":root");
 const hero = document.querySelector(".app__header");
 const gallery = document.querySelector(".main__gallery");
-const jeffs = [...hero.querySelectorAll("img")];
+
+const jeffs = [...(hero?.querySelectorAll("img") || [])];
 const jeffNum = jeffs.length;
 const cdn = "https://image.tmdb.org/t/p";
 

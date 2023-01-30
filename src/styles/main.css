@@ -1,25 +1,29 @@
 @property --gradientStart {
-  syntax: "<color>",
-  initialValue: "#61BFD9",
-  inherits: true,
-});
-
-@property --gradientEnd {
-  syntax: "<color>",
-  initialValue: "#0551B4",
-  inherits: true,
-});
-
-@keyframes fade-in {
-  to {opacity: 1}
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #61BFD9;
 }
 
-*, *::before, *::after {
+@property --gradientEnd {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #0551B4;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 :root {
-   --maxWidth: 1140px;
+  --maxWidth: 1140px;
   --icon-wh: 16px;
 
   will-change: scroll-position;
@@ -143,7 +147,7 @@ button {
   color: #fff;
   z-index: 1;
 
-  @media(--mq-m) {
+  @media (--mq-m) {
     background: none;
   }
 }
@@ -170,7 +174,7 @@ button {
 .description {
   margin: 50px 30px 90px;
 
-  @media(--mq-m) {
+  @media (--mq-m) {
     margin: 80px 0 90px;
   }
 }
@@ -191,11 +195,11 @@ button {
   font-size: 24px;
   font-weight: 500;
 
-  @media(--mq-s) {
+  @media (--mq-s) {
     width: 60%;
   }
 
-  @media(--mq-m) {
+  @media (--mq-m) {
     width: 40%;
     font-size: 28px;
   }
@@ -303,7 +307,7 @@ button {
 }
 
 .main__gallery,
-.main__acknowledgements{
+.main__acknowledgements {
   position: absolute;
   top: 0;
   left: 0;
@@ -313,8 +317,8 @@ button {
 
 .main__gallery {
   display: layout(masonry);
-    --padding: 20;
-    --columns: 5;
+  --padding: 20;
+  --columns: 5;
 
   overflow: auto;
 
@@ -384,7 +388,6 @@ button {
   position: absolute;
   top: 0;
 
-
   display: block;
   width: var(--wh);
   height: var(--wh);
@@ -411,7 +414,7 @@ button {
     transition: fill 3s;
 
     fill: var(--gradientStart);
-    color:#fff;
+    color: #fff;
 
     @media (--mq-xl) {
       fill: var(--gradientEnd);
