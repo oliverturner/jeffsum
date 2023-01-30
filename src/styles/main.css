@@ -9,7 +9,7 @@
 :root {
    --maxWidth: 1140px;
   --icon-wh: 16px;
-  
+
   --gradientStart: #61BFD9;
   --gradientEnd: #0551B4;
 
@@ -27,7 +27,7 @@ body {
   background: #fff;
 
   -webkit-font-smoothing: antialiased;
-} 
+}
 
 a {
   color: inherit;
@@ -100,7 +100,8 @@ button {
   opacity: 0.3;
   overflow: hidden;
   z-index: 1;
-  
+  background: var(--gradientStart, #61bfd9);
+
   & > img {
     will-change: opacity, transform;
 
@@ -111,7 +112,7 @@ button {
     display: block;
     width: 100%;
     opacity: 0;
-    background: var(--gradientEnd);
+    background: var(--gradientEnd, #61bfd9);
 
     &:first-child {
       opacity: 1;
@@ -145,7 +146,7 @@ button {
   & a {
     opacity: 0.75;
   }
-  
+
   & a {
     font-weight: 500;
     text-decoration: line-through;
@@ -159,7 +160,7 @@ button {
 
 .description {
   margin: 50px 30px 90px;
-  
+
   @media(--mq-m) {
     margin: 80px 0 90px;
   }
@@ -219,11 +220,11 @@ button {
   background: #fff;
   color: initial;
   z-index: 1;
-  
+
   @media (--mq-l) {
     flex-direction: row;
     align-items: center;
-    
+
     position: absolute;
     right: 0;
   }
@@ -242,7 +243,7 @@ button {
   & > span {
     display: inline-block;
   }
-  
+
   @media (--mq-m) {
     & > span {
       display: inline;
@@ -252,7 +253,7 @@ button {
   @media (--mq-l) {
     flex: 0 0 auto;
     padding: 0 2em;
-  }  
+  }
 }
 
 .jeffness__input {
@@ -305,12 +306,12 @@ button {
   display: layout(masonry);
     --padding: 20;
     --columns: 5;
-  
+
   overflow: auto;
 
   & img {
     animation: 1s fade-in forwards;
-    
+
     object-fit: cover;
     opacity: 0;
   }
@@ -373,7 +374,7 @@ button {
 
   position: absolute;
   top: 0;
-  
+
 
   display: block;
   width: var(--wh);

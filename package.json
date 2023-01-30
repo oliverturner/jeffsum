@@ -23,28 +23,16 @@
   "repository": {
     "url": "git@github.com:oliverturner/jeffsum.git"
   },
-  "main": "src/index.html",
-  "browserslist": [
-    "> 1%, not IE 11"
-  ],
+  "volta": {
+    "node": "18.13.0"
+  },
   "devDependencies": {
-    "cypress": "3.3.1",
     "postcss-preset-env": "6.6.0",
-    "servor": "2.2.1"
+    "vite": "^4.0.4"
   },
   "scripts": {
-    "transpile:css": "postcss src/styles/*.pcss",
-    "dev:css": "yarn transpile:css --dir src/css --ext css -w",
-    "dev:serve": "servor src",
-    "build:css": "yarn transpile:css --dir dist/css --ext css",
-    "build:js": "cp -R src/js dist",
-    "build:assets": "cp -R src/img dist",
-    "build:html": "cp src/index.html dist",
-    "dev": "run-p dev:*",
-    "build": "run-s build:*"
-  },
-  "dependencies": {
-    "npm-run-all": "4.1.5",
-    "postcss-cli": "6.1.2"
+    "build": "vite build",
+    "dev": "vite",
+    "start": "vite"
   }
 }
