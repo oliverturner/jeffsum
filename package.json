@@ -23,13 +23,8 @@
   "repository": {
     "url": "git@github.com:oliverturner/jeffsum.git"
   },
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
-  },
   "volta": {
-    "node": "18.13.0",
-    "npm": "8.19.3"
+    "node": "18.13.0"
   },
   "devDependencies": {
     "postcss-preset-env": "6.6.0",
