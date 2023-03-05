@@ -1,13 +1,13 @@
 @property --gradientStart {
   syntax: "<color>";
   inherits: true;
-  initial-value: #61BFD9;
+  initial-value: #61bfd9;
 }
 
 @property --gradientEnd {
   syntax: "<color>";
   inherits: true;
-  initial-value: #0551B4;
+  initial-value: #0551b4;
 }
 
 @keyframes fade-in {
@@ -309,7 +309,7 @@ button {
   z-index: 0;
 }
 
-.main__gallery,
+.main__quotes,
 .main__acknowledgements {
   position: absolute;
   top: 0;
@@ -318,18 +318,9 @@ button {
   height: 100vh;
 }
 
-.main__gallery {
-  display: layout(masonry);
-  --padding: 20;
-  --columns: 5;
-
-  overflow: auto;
-
-  & img {
-    animation: 1s fade-in forwards;
-
-    object-fit: cover;
-    opacity: 0;
+.main__quotes {
+  & p {
+    line-height: 1.5;
   }
 }
 
