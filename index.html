@@ -42,25 +42,25 @@
               <a href="https://www.twitter.com/seanehalpin">He made this.</a>
             </p>
             <div class="description">
-              <h1 class="description__title">Placeblum.</h1>
+              <h1 class="description__title">Jeffsum.</h1>
               <p class="description__strapline">
-                A little image gallery of Jeff Goldblum awesomeness.
+                A little text placeholder generator of Jeff Goldblum awesomeness.
               </p>
             </div>
           </div>
         </div>
       </header>
       <main class="app__content">
-        <form class="jeffness">
+        <form name="jeffness" class="jeffness">
           <label class="jeffness__label">
-            Inject Jeff's work into my veins like
+            Gimme like
             <input
               class="jeffness__input"
-              type="number"
               name="paragraphs"
-              value="15"
+              type="number"
+              value="5"
             />
-            <span>times</span>
+            <span>paragraphs of that Jeffness.</span>
           </label>
           <button class="jeffness__btn">Receive the Jeff.</button>
         </form>
@@ -68,7 +68,7 @@
     </div>
 
     <div id="main" class="main">
-      <div class="main__gallery"></div>
+      <div class="main__quotes" data-component="quotes"></div>
 
       <div class="main__acknowledgements">
         <div class="acknowledgements__content message">
@@ -145,6 +145,6 @@
     </template>
 
     <!-- Application -->
-    <script type="module" src="src/js/entry.js"></script>
+    <script type="module" src="src/js/index.ts"></script>
   </body>
 </html>
