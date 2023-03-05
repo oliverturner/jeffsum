@@ -21,9 +21,6 @@
   --icon-wh: 16px;
 
   will-change: scroll-position;
-
-  height: 100vh;
-  overflow: hidden;
   scroll-behavior: smooth;
 }
 
