@@ -16,12 +16,6 @@
   }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
 :root {
   --maxWidth: 1140px;
   --icon-wh: 16px;
@@ -134,7 +128,8 @@ button {
   }
 
   @media (--mq-l) {
-    top: 30px;
+    top: 60px;
+    left: -30px;
     opacity: 1;
     box-shadow: 0 48px 64px -24px rgba(0, 0, 0, 0.3);
   }
@@ -188,6 +183,10 @@ button {
   @media (--mq-l) {
     font-size: 150px;
   }
+
+  @media (--mq-xl) {
+    font-size: 202px;
+  }
 }
 
 .description__strapline {
@@ -205,7 +204,11 @@ button {
   }
 
   @media (--mq-l) {
-    width: 50%;
+    width: 55%;
+  }
+
+  @media (--mq-xl) {
+    width: 55%;
     font-size: 39px;
     text-align: left;
     opacity: 0.7;
@@ -270,9 +273,12 @@ button {
 }
 
 .jeffness__input {
+  flex: 0 0 auto;
+
   transition: --gradientEnd 3s;
 
-  width: 2em;
+  width: 5ch;
+  padding: 0;
   border: 1px solid var(--gradientEnd);
   border-radius: 3px;
   text-align: center;

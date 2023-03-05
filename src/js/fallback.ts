@@ -29,7 +29,7 @@ const getFeature = ({ url, label, enabled }) => {
   `;
 };
 
-const onCopyClick = async toaster => {
+const onCopyClick = async (toaster) => {
   const url = "chrome://flags/#enable-experimental-web-platform-features";
 
   if (!navigator.clipboard) {
@@ -39,20 +39,20 @@ const onCopyClick = async toaster => {
 
   try {
     await navigator.clipboard.writeText(url);
-    toaster(
-      "📋",
-      `Link copied to clipboard! Now on to step 2...`,
-      "success"
-    );
+    toaster("📋", `Link copied to clipboard! Now on to step 2...`, "success");
   } catch (err) {
     toaster("😱", `Oh no! ${err}`, "error");
   }
 };
 
-export const showFallback = features => {
-  const template = document.querySelector("#template-fallback");
+/**
+ * @param {{ url: any; label: any; enabled: any; }[]} features
+ */
+export const showFallback = (features) => {
+  const template =
+    document.querySelector<HTMLTemplateElement>("#template-fallback")!;
   const node = document.importNode(template.content, true);
-  const slot = node.querySelector("[data-slot=features]");
+  const slot = node.querySelector("[data-slot=features]")!;
   slot.innerHTML = features.map(getFeature).join("");
 
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -60,10 +60,10 @@ export const showFallback = features => {
 
   const toaster = makeToaster(node.querySelector(".toaster"));
 
-  const copyBtn = node.querySelector("[data-click=copy]");
+  const copyBtn = node.querySelector("[data-click=copy]")!;
   copyBtn.addEventListener("click", () => onCopyClick(toaster));
 
-  const body = document.querySelector("body");
+  const body = document.querySelector("body")!;
   body.appendChild(node);
   body.appendChild(svg);
 };
