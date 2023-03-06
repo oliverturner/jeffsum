@@ -44,6 +44,7 @@ input {
 figure,
 button {
   all: unset;
+  margin: 0;
 }
 
 button {
@@ -125,10 +126,13 @@ button {
   }
 
   @media (--mq-l) {
-    top: 60px;
     left: -30px;
     opacity: 1;
     box-shadow: 0 48px 64px -24px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (--mq-xl) {
+    top: 60px;
   }
 }
 
@@ -302,20 +306,13 @@ button {
 }
 
 .main {
-  position: relative;
   max-width: 960px;
-  height: 100vh;
-  margin: 150px auto 0;
-  z-index: 0;
-}
+  margin: 0 auto;
+  padding: 0 1rem;
 
-.main__quotes,
-.main__acknowledgements {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+  @media (--mq-l) {
+    margin: 200px auto 0;
+  }
 }
 
 .main__quotes {
